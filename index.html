@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장준수 포트폴리오</title>
+<meta name="description" content="장준수가 지금 만들고 있는 프로젝트 3개. 드랍쓰리, 토스 퀀트, Cursed Night.">
+<meta property="og:title" content="장준수 포트폴리오">
+<meta property="og:description" content="드랍쓰리, 토스 퀀트, Cursed Night">
+<meta property="og:image" content="https://junsuboy.github.io/portfolio/img/cn-1-horde.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#111214; --panel:#1a1b1f; --line:#2a2c31; --text:#ececec; --sub:#9a9ca3;
+  --dt:#dcfc28; --tq:#3d8bff; --cn:#f2c14e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:Pretendard,-apple-system,"Apple SD Gothic Neo",sans-serif;line-height:1.65;font-size:16px;word-break:keep-all}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+header{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+header h1{font-size:40px;letter-spacing:-.02em;line-height:1.2}
+header p.lead{margin-top:14px;font-size:19px;color:var(--sub);max-width:640px}
+.next{margin-top:18px;font-size:16px;max-width:640px;border-left:3px solid var(--dt);padding:4px 0 4px 14px;color:#d6d7db}
+.next b{color:var(--text)}
+.contact{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 18px;font-size:15px}
+.contact a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line)}
+.contact a:hover{border-color:var(--text)}
+.toc{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.toc a{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.toc a:hover{border-color:#444}
+.toc b{display:block;font-size:17px}
+.toc span{font-size:13px;color:var(--sub)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;margin-bottom:8px}
+.tag.live{background:var(--dt);color:#111}
+.tag.wip{background:#2d2f35;color:#cfd1d6}
+
+section.proj{padding:72px 0;border-bottom:1px solid var(--line)}
+.head{display:flex;gap:16px;align-items:center}
+.head img{width:56px;height:56px;border-radius:14px}
+.head .ph{width:56px;height:56px;border-radius:14px;background:var(--tq);display:grid;place-items:center;font-weight:800;color:#fff;font-size:20px}
+.head h2{font-size:30px;letter-spacing:-.02em;line-height:1.2}
+.head .one{color:var(--sub);font-size:15px}
+.summary{margin-top:22px;font-size:18px;max-width:760px}
+.links{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;text-decoration:none;font-size:14px;font-weight:600;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel)}
+.btn.main{background:var(--accent);color:#111;border-color:var(--accent)}
+.btn:hover{border-color:#555}
+.note{margin-top:10px;font-size:13px;color:var(--sub)}
+
+.shots{margin-top:32px;display:grid;gap:12px}
+.shots.phone{grid-template-columns:repeat(3,1fr)}
+.shots.wide{grid-template-columns:1fr 1fr}
+.toc>*,.cols>*,.stats>*,.shots>*{min-width:0}
+code{overflow-wrap:anywhere}
+.shots img{border-radius:12px;border:1px solid var(--line);width:100%;height:auto;background:#000}
+.shots .full{grid-column:1/-1}
+figure figcaption{font-size:13px;color:var(--sub);margin-top:6px}
+
+.cols{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+.cols h3{font-size:15px;color:var(--accent);margin-bottom:8px;font-weight:700}
+.cols ul{list-style:none}
+.cols li{position:relative;padding-left:14px;margin-bottom:7px;font-size:15px;color:#d6d7db}
+.cols li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:#5a5c63}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:#24262b;padding:1px 5px;border-radius:5px}
+
+.stats{margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:22px;letter-spacing:-.01em}
+.stat span{font-size:13px;color:var(--sub)}
+
+.diagram{margin-top:32px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;overflow-x:auto}
+.diagram svg{display:block;min-width:720px;width:100%;height:auto}
+
+#dropthree{--accent:var(--dt)}
+#tossquant{--accent:var(--tq)}
+#tossquant .btn.main{color:#fff}
+#cursednight{--accent:var(--cn)}
+
+footer{padding:56px 0 80px;color:var(--sub);font-size:14px}
+footer h2{color:var(--text);font-size:20px;margin-bottom:12px}
+footer ul{list-style:none}
+footer li{margin-bottom:6px}
+
+@media (max-width:760px){
+  header{padding:48px 0 32px}
+  header h1{font-size:30px}
+  header p.lead{font-size:17px}
+  .toc{grid-template-columns:1fr}
+  section.proj{padding:52px 0}
+  .head h2{font-size:24px}
+  .summary{font-size:16px}
+  .cols{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .shots.wide{grid-template-columns:1fr}
+  .shots.phone{grid-template-columns:repeat(3,1fr);gap:8px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>장준수</h1>
+    <p class="lead">개발자. 지금은 퇴근 후에 프로젝트 3개를 혼자 만들고 있습니다. 기획, 디자인, 개발, 배포까지 직접 하고, 세 프로젝트 모두 Claude Code와 같이 작업했습니다.</p>
+    <p class="next"><b>다음에 만들고 싶은 것.</b> 드랍쓰리를 나라별로 넓혀서, 각 나라에서 지금 뜨는 것을 사람 손 없이 매일 골라 보여주는 서비스를 만들고 싶습니다.</p>
+    <div class="contact">
+      <a href="https://github.com/junsuboy">github.com/junsuboy</a>
+      <a href="mailto:junsuboyboy@hanyang.ac.kr">junsuboyboy@hanyang.ac.kr</a>
+    </div>
+    <nav class="toc">
+      <a href="#dropthree"><span class="tag live">출시</span><b>드랍쓰리</b><span>매일 요즘 유행 3개를 자동으로 고르는 웹과 iOS 앱</span></a>
+      <a href="#tossquant"><span class="tag wip">개발 중</span><b>토스 퀀트</b><span>토스증권 Open API로 돌리는 국내 주식 퀀트 시스템</span></a>
+      <a href="#cursednight"><span class="tag wip">개발 중</span><b>Cursed Night</b><span>최대 4인 협동 로블록스 생존 액션 게임</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="proj" id="dropthree">
+  <div class="wrap">
+    <div class="head">
+      <img src="img/dt-icon.png" alt="드랍쓰리 앱 아이콘" width="56" height="56">
+      <div>
+        <span class="tag live">출시</span>
+        <h2>드랍쓰리 (DropThree)</h2>
+        <div class="one">2026년 9월 시작. 웹 운영 중, App Store 출시</div>
+      </div>
+    </div>
+    <p class="summary">매일 자정에 "요즘 유행" 3개가 바뀝니다. 사람이 고르지 않습니다. 유튜브에서 여러 채널이 동시에 다루기 시작한 이름을 찾아서 순위를 매기고, 설명 글과 사진까지 붙여서 사이트와 앱에 올립니다. 서버 비용 없이 무료 API 한도 안에서 매일 돌아갑니다.</p>
+    <div class="links">
+      <a class="btn main" href="https://dropthree.pages.dev" target="_blank" rel="noopener">사이트 보기 (dropthree.pages.dev)</a>
+      <a class="btn" href="https://apps.apple.com/kr/app/id6816718775" target="_blank" rel="noopener">App Store</a>
+    </div>
+
+    <div class="shots phone">
+      <figure><img src="img/dt-01-today.jpg" alt="앱 첫 화면, 오늘의 유행 1~3위" loading="lazy" width="600" height="1304"><figcaption>첫 화면. 이름만 보고 맞혀 보는 구조</figcaption></figure>
+      <figure><img src="img/dt-02-detail.jpg" alt="유행 상세 화면" loading="lazy" width="600" height="1304"><figcaption>상세. 설명은 LLM이 쓰고 근거 영상을 붙임</figcaption></figure>
+      <figure><img src="img/dt-04-ranking.jpg" alt="유행 순위 화면" loading="lazy" width="600" height="1304"><figcaption>순위와 전날 대비 변화</figcaption></figure>
+      <figure class="full"><img src="img/dt-web.jpg" alt="dropthree.pages.dev 데스크톱 화면" loading="lazy" width="1440" height="900"><figcaption>웹 (2026년 10월 19일 화면)</figcaption></figure>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>어떻게 고르나</h3>
+        <ul>
+          <li>검색량 순위를 쓰지 않고, 여러 채널에 동시에 퍼지는지를 봅니다.</li>
+          <li>유튜브 검색과 채널 RSS로 최근 2일 영상을 모으고, LLM이 제목에서 유행 이름을 뽑습니다. 제목에 실제로 있는 이름만 인정합니다.</li>
+          <li>채널 3곳 이상, 그 채널들 평소 반응의 1.2배 이상, 뉴스 비중 30% 미만일 때만 후보가 됩니다.</li>
+          <li>점수는 <code>log2(1+채널 수) x log2(1+반응 배수) x 새로움</code>. 유행마다 주소가 고정이라 "3일째 오늘의 3개", "어제 4위에서 오늘 2위" 같은 기록이 쌓입니다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>어떻게 돌아가나</h3>
+        <ul>
+          <li>GitHub Actions가 매일 오후부터 다음 날 치를 만들고, 23시에 Cloudflare Pages로 배포합니다.</li>
+          <li>Gemini 무료 한도가 저녁에 자주 막혀서 만들기와 배포를 나눴습니다. 16시부터 매시 다시 시도하고, 앞 시도에서 끝낸 부분은 캐시로 넘겨 모자란 부분만 합니다.</li>
+          <li>GitHub 예약 실행이 3시간 가까이 늦게 떠서 Cloudflare Worker가 바깥에서 실행을 누릅니다.</li>
+          <li>iOS 앱은 SwiftUI 전면 네이티브이고 홈 화면 위젯이 있습니다. 사이트가 올리는 정적 JSON만 받습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj" id="tossquant">
+  <div class="wrap">
+    <div class="head">
+      <div class="ph">TQ</div>
+      <div>
+        <span class="tag wip">개발 중, 개인 운용용</span>
+        <h2>토스 퀀트 (toss-quant)</h2>
+        <div class="one">2026년 10월 시작. 데이터와 브로커 연동 단계</div>
+      </div>
+    </div>
+    <p class="summary">2026년에 토스증권 Open API가 열리면서 개인도 기관처럼 데이터, 백테스트, 리스크 관리, 자동 주문을 한 시스템으로 묶을 수 있게 됐습니다. 국내 주식 멀티팩터 전략을 만들고 검증해서, 장중에 손대지 않아도 주 단위로 알아서 리밸런싱하는 시스템을 만들고 있습니다.</p>
+    <div class="links">
+      <span class="btn">저장소 비공개 (토스 데이터는 제3자 배포 금지)</span>
+    </div>
+    <p class="note">아직 백테스트 전 단계라 수익률은 없습니다. 백테스트를 통과하기 전에는 실전 주문 코드를 켜지 않는 것이 규칙입니다.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 960 300" role="img" aria-label="토스 퀀트 구조도">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b6e76"/></marker>
+        </defs>
+        <style>
+          .bx{fill:#22242a;stroke:#3a3d44;stroke-width:1}
+          .bd{fill:#16263f;stroke:#3d8bff;stroke-width:1.2}
+          .bp{fill:#1a1b1f;stroke:#3a3d44;stroke-width:1;stroke-dasharray:4 4}
+          .t{fill:#ececec;font:600 14px Pretendard,sans-serif}
+          .s{fill:#9a9ca3;font:12px Pretendard,sans-serif}
+          .ln{stroke:#6b6e76;stroke-width:1.4;fill:none;marker-end:url(#ar)}
+        </style>
+        <rect class="bd" x="10" y="20" width="200" height="54" rx="10"/><text class="t" x="24" y="44">KRX 일봉</text><text class="s" x="24" y="62">상장폐지 종목 포함</text>
+        <rect class="bd" x="10" y="86" width="200" height="54" rx="10"/><text class="t" x="24" y="110">DART 재무제표</text><text class="s" x="24" y="128">공시일 기준, 2013년부터</text>
+        <rect class="bd" x="10" y="152" width="200" height="54" rx="10"/><text class="t" x="24" y="176">거시 지표</text><text class="s" x="24" y="194">FRED, ECOS 발표 시점별 값</text>
+        <rect class="bd" x="10" y="218" width="200" height="54" rx="10"/><text class="t" x="24" y="242">토스 Open API</text><text class="s" x="24" y="260">수급, 시세, 계좌</text>
+        <path class="ln" d="M210 47 H250 V146 H272"/><path class="ln" d="M210 113 H250"/><path class="ln" d="M210 179 H250"/><path class="ln" d="M210 245 H250 V146"/>
+        <rect class="bd" x="274" y="104" width="190" height="84" rx="10"/><text class="t" x="290" y="132">DuckDB (PIT)</text><text class="s" x="290" y="152">언제 알 수 있었는지</text><text class="s" x="290" y="170">기준으로 모든 행 저장</text>
+        <path class="ln" d="M464 146 H500"/>
+        <rect class="bd" x="502" y="104" width="150" height="84" rx="10"/><text class="t" x="518" y="132">as_of(date)</text><text class="s" x="518" y="152">미래 데이터를</text><text class="s" x="518" y="170">못 보는 조회 API</text>
+        <path class="ln" d="M652 146 H690"/>
+        <rect class="bp" x="692" y="20" width="258" height="54" rx="10"/><text class="t" x="708" y="44">팩터, 백테스트</text><text class="s" x="708" y="62">가치, 퀄리티, 모멘텀, 수급, 저변동</text>
+        <rect class="bp" x="692" y="86" width="258" height="54" rx="10"/><text class="t" x="708" y="110">거시 레짐</text><text class="s" x="708" y="128">확장, 긴축, 위기에 따라 현금 비중 조절</text>
+        <rect class="bp" x="692" y="152" width="258" height="54" rx="10"/><text class="t" x="708" y="176">포트폴리오, 리스크</text><text class="s" x="708" y="194">20종목, 낙폭 한도 -20%</text>
+        <rect class="bp" x="692" y="218" width="258" height="54" rx="10"/><text class="t" x="708" y="242">토스 주문 실행</text><text class="s" x="708" y="260">주간 리밸런싱, 손절 익절 조건주문</text>
+        <rect class="bd" x="274" y="232" width="14" height="14" rx="3"/><text class="s" x="296" y="244">만든 부분</text>
+        <rect class="bp" x="376" y="232" width="14" height="14" rx="3"/><text class="s" x="398" y="244">다음 단계</text>
+      </svg>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>813</b><span>테스트 함수</span></div>
+      <div class="stat"><b>7개</b><span>CI 필수 검사</span></div>
+      <div class="stat"><b>19</b><span>머지된 PR</span></div>
+      <div class="stat"><b>86</b><span>커밋 (10월 15일부터)</span></div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>백테스트가 거짓말하지 않게</h3>
+        <ul>
+          <li>모든 데이터를 "그날 알 수 있었던 값"으로 저장합니다. 재무제표 정정이나 거시 지표 수정 발표가 와도 옛 행을 고치지 않고 새 행을 쌓습니다.</li>
+          <li>전략 코드는 <code>as_of(date)</code>로만 데이터를 읽습니다. 테이블을 직접 읽는 코드는 정적 검사가 잡아서 CI에서 막힙니다.</li>
+          <li>상장폐지 종목까지 넣어 생존 편향을 없앴습니다. 토스 API는 상폐 종목을 못 주기 때문에 백테스트 데이터는 KRX, DART에서 따로 받습니다.</li>
+          <li>DART JSON API가 없는 2013~2014년 재무는 원본 XBRL 파일을 풀어서 복구했습니다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>토스 API 클라이언트</h3>
+        <ul>
+          <li>클라이언트당 토큰이 하나뿐이라 재발급하면 이전 토큰이 죽습니다. 토큰 매니저 하나가 발급과 교체를 맡습니다.</li>
+          <li>주문, 시세, 계좌마다 초당 한도가 달라서 그룹별 레이트 리미터를 둡니다.</li>
+          <li>모의 토스 서버와 가상 시계로 한도, 점검, 토큰 만료 상황을 네트워크 없이 테스트합니다.</li>
+          <li>로그에 토큰, 시크릿, 계좌번호가 한 글자라도 찍히면 테스트가 실패합니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj" id="cursednight">
+  <div class="wrap">
+    <div class="head">
+      <img src="img/cn-icon.png" alt="Cursed Night 아이콘" width="56" height="56">
+      <div>
+        <span class="tag wip">개발 중, 공개 준비</span>
+        <h2>Cursed Night</h2>
+        <div class="one">2026년 10월 시작. 로블록스, 솔로와 최대 4인 협동</div>
+      </div>
+    </div>
+    <p class="summary">해가 지면 숲의 짐승들이 해골과 유령이 되어 몰려옵니다. 20분 동안 버티면 이기는 생존 액션입니다. 조작은 이동뿐이고 공격은 자동입니다. 레벨업할 때마다 카드 3장 중 하나를 고르고, 무기와 패시브를 맞춰 진화시키면서 화면을 쓸어 담는 재미에 집중했습니다.</p>
+    <div class="links">
+      <span class="btn">Roblox에 게시됨, 공개 전 (상품 등록 남음)</span>
+    </div>
+
+    <div class="shots wide">
+      <figure class="full"><img src="img/cn-1-horde.jpg" alt="수많은 적에 둘러싸인 전투 화면" loading="lazy" width="1200" height="675"></figure>
+      <figure><img src="img/cn-2-boss.jpg" alt="보스 등장 화면" loading="lazy" width="1200" height="675"><figcaption>5분마다 보스</figcaption></figure>
+      <figure><img src="img/cn-3-evolve.jpg" alt="레벨업 카드 선택 화면" loading="lazy" width="1200" height="675"><figcaption>레벨업 3장 중 1장</figcaption></figure>
+      <figure class="full"><img src="img/cn-4-lobby.jpg" alt="로비 화면" loading="lazy" width="1200" height="675"><figcaption>로비. 실제 게임 화면을 캡처해서 스토어 이미지로 만들었습니다</figcaption></figure>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>18</b><span>캐릭터, 전부 다른 플레이 방식</span></div>
+      <div class="stat"><b>36</b><span>무기 16, 진화 16, 합체 4</span></div>
+      <div class="stat"><b>3</b><span>맵 (숲, 묘지, 성채)</span></div>
+      <div class="stat"><b>349</b><span>커밋 (10월 1일부터)</span></div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>적 200마리를 로블록스에서</h3>
+        <ul>
+          <li>적은 Instance가 아니라 서버의 표 데이터입니다. 이동 규칙을 결정적으로 만들어 서버와 클라이언트가 같은 코드로 계산하고, 서버는 0.1초마다 차이만 보정합니다.</li>
+          <li>명중은 클라이언트가 판정하고 서버는 적 위치 이력으로 검증만 합니다. 거부율이 5%를 넘으면 의심 플래그가 붙습니다.</li>
+          <li>15fps 같은 저사양에서 화살이 적을 뚫고 지나가는 문제가 있어서, 프레임 사이를 쓸어서 가장 가까운 순간으로 판정합니다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>혼자 만드는 방식</h3>
+        <ul>
+          <li>기획 세션과 개발 세션, Claude 두 개가 메시지를 주고받으며 돌고 저는 손맛과 미감만 확인합니다.</li>
+          <li>화면 상태까지 자동 테스트로 판정합니다. 봇이 실제로 판을 돌며 난이도와 무기 밸런스를 잽니다.</li>
+          <li>저장은 외부 라이브러리 없이 직접 짰습니다. 결제가 들어오면 지급 후 저장이 성공했을 때만 완료 처리하고, 실패하면 지급 전으로 되돌립니다.</li>
+          <li>적과 보스 3D 모델은 Roblox 생성 도구로 만들고 화풍 프롬프트를 고정해 맞췄습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>확인 방법</h2>
+    <ul>
+      <li>드랍쓰리: <a href="https://dropthree.pages.dev">dropthree.pages.dev</a>는 매일 자정에 내용이 바뀝니다. 앱은 <a href="https://apps.apple.com/kr/app/id6816718775">App Store</a>에서 "드랍쓰리"로 검색하면 나옵니다 (판매자 Junsu Jang).</li>
+      <li>토스 퀀트, Cursed Night: 아직 공개 전이라 저장소가 비공개입니다. 위 숫자는 GitHub 저장소 기준이고, 필요하면 메일 주시면 보여드리겠습니다.</li>
+      <li>이 페이지 소스: <a href="https://github.com/junsuboy/portfolio">github.com/junsuboy/portfolio</a></li>
+    </ul>
+    <p style="margin-top:24px">마지막 수정 2026년 10월 19일</p>
+  </div>
+</footer>
+
+</body>
+</html>
